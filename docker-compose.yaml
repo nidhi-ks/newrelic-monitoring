@@ -1,0 +1,13 @@
+version: "3.6"
+
+services:
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.92.0
+    command: --config=/etc/otelcol/config.yaml
+    volumes:
+      - ./collector.yaml:/etc/otelcol/config.yaml  # Ensure this path matches the config file name
+    environment:
+      - CONFLUENT_API_KEY=AZCHIZY7RUBKFAHY
+      - CONFLUENT_API_SECRET=W8WlvIGd3Uj3eyBfUl1VCadkIxuA/SG+jQ6XkhnQPrNSxiIAq1t4N/VQSwZjkhYm
+      - NEW_RELIC_LICENSE_KEY=7f6975a49e87827ad4d347e6786efd83FFFFNRAL
+      - CLUSTER_ID=lkc-zkzgj3
